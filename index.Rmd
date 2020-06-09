@@ -1,4 +1,4 @@
---- 
+---
 title: "Rock Your Resume with R"
 author: "Mai Uchida"
 date: "`r Sys.Date()`"
