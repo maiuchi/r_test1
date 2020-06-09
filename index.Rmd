@@ -1,0 +1,336 @@
+--- 
+title: "Rock Your Resume with R"
+author: "Mai Uchida"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+---
+
+# Welcome! {-}
+
+<iframe width='100%' height='800' src='https://rdrr.io/snippets/embed/' frameborder='0'></iframe>
+
+
+```{r eval=FALSE, include=FALSE}
+install.packages('bookdown')
+options(max.print = 100)
+knitr::opts_chunk$set(message=FALSE, fig.path="R/Rintro/figures/")
+knitr::opts_knit$set(root.dir="R/Rintro") # base.url = "/" # base.dir="R/Rintro"
+# knitr::opts_chunk$set(eval=FALSE, results=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+# knitr::opts_knit$set(base.dir = "/Users/nunnlab/Desktop/GitHub/rgriff23.github.io/")
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+# Why learn R?
+
+## Pros and Cons of R {-}
+
+Pros
+
+  * R is a language made by statisticians
+     + Lots of packages that allow you to perform statistical analysis/ modeling  
+     + Large user community  
+     + Free and open source  
+     + Nice visualization package (ggplot) 
+    
+Cons 
+
+  * R has a learning curve  
+  * R is more specific to statistical analysis 
+     + (e.g.) Python can do a lot more and their stats packages are getting better
+     
+## Learning a programing language is an investment, choose wisely {-}
+
+Points of considerations 
+
+  * What’s your industry’s standard?  
+      + If you are going to finance, I’d learn Excel instead
+      + If a job you are applying to uses SAS, I'd learn SAS instead
+  <br />
+  <br />
+  * Do you need a programming language to perform what you need to do? 
+      + If you want to a health insurance company writing policies, maybe learning a programming language will have a small investment of return 
+  <br />
+  <br />
+  * Is the software/ programming language free (open source) or licensed?  
+      + If licensed and your employer/ research team has no funding for it, your programing knowledge won’t be as helpful as it could be  
+      + If open source, you can just download it to your computer (most of the time if no restrictions from the organizations you work for) 
+      
+# Why visualization matters?
+
+# Difference between exploratory and explanatory data visualization
+
+# Base R syntax and data type
+
+## Data type
+  + Charactor vector (srting and/ or factor): defined by using " "
+    + (e.g.) "Jack", "Rose"
+    + Cannot perform mathmatical calculations
+    
+  + Numeric vector (double, integer etc...): numbers are written as is
+    + (e.g.) 100, 200 
+    + Can perfom a mathmatical calculations
+  <br />
+  + Logical vecor: TRUE or FALSE
+      
+Let's practice!
+
+  * write a code *100 + 200* as a numerical vector
+  * write a code *100 + 200* as a character vector
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+  
+
+## Create a variable and assign a value 
+* if you want to make a variable x and assign 1 as a value
+    + "<-" is the symbol we use to assign values in R
+    + "#" is to make comments on an R script
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+x #check the variable
+```
+
+Let's practice!
+
+  * Create a variable pineapples and assign 120 as a value
+      + Check the variable
+  
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Create variables and calculate
+* Create variables x and y. 
+* Assign 1 as a value for x, 4 as a value of y
+* Add them up
+* Check if x is bigger than y
+
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+
+#create variables x, y and assign values
+x <- 1
+y <- 4
+
+#add x and y
+x + y
+
+#examine using logical operator 
+x > y
+
+```
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Add them up using variable names
+* Check if pineapples are larger than strawberries using a logical operator
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+
+## Create a new variable with the sum 
+* Create a variable z and assign the sum of x + y
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+y <- 4
+
+#create a new variable z and assign the sum of x and y
+z <- x + y
+
+#check the value of z
+z
+``` 
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Create a new variable pineberries and assign the sum of pineapples and strawberries
+* Check the value of pineberries)
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Use functions
+* Calcurate the sum of x, y and z 
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+y <- 4
+z <- x + y
+
+#sum up x, y and z using the sum() function
+sum(x, y, z)
+```
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Create a new variable pineberries and assign the sum of pineapples and strawberries
+* Sum up pinabbles, strawberries, and pineberries using the sum() function
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Make a data frame
+* Make a data frame "df1"
+    + (explanation 1). "variable" is a column name, c("", "",) is to add multiple vairiables. this says assign x to the "variable" column,  row 1. assign y to the "variable" column, row 2. assign z to the "variable" column, row 3. 
+    + (explanation 2). "value" is a column name. this says that assign 1 to the "value" column, row 1. assign 4 to the "value" column, row 2. assign 10 to the "value" column, row 3. 
+* Calcurate the mean of x, y and z 
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+df1 <- data.frame("variable" = c("x", "y", "z"), #(explanation 1). 
+                   "value" = c(1, 4, 10)) #(explanation 2). 
+
+str(df1)
+
+#calcurate mean
+mean(df1$value) #"$" is select "value column" from df1
+```
+
+Let's practice!
+
+* Create a dataframe "fruits," which contains two columns ("fruitType" and "amount")
+    + pineapples, which the value is 120
+    + strawberries, which the value is 70
+    + pineberries, which the value is 190
+* Check the structure of the dataframe 
+* Calculate the mean of "amount"" 
+    
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Create a simple plot
+
+* Create a data frame "firstHalf"
+* Create a simple barplot using the "barplot()" function
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+firstHalf <- data.frame("month" = c("Jan", "Feb", "Mar", "Apr", "May", "June"), 
+                   "value" = c(150, 200, 15, 70, 300, 60)) 
+
+#create a bar plot. names.arg is to label each bar
+barplot(fristHalf$value, names.arg = c("Jan", "Feb", "Mar", "Apr", "May", "June")) 
+```
+
+Let's practice!
+
+* Create a data frame "secondHalf." Monthly values are as follows: 
+    + July, 250
+    + August, 10
+    + September, 600
+    + October, 120
+    + November, 80
+    + December, 50
+
+* Create a barplot using the "barplot()" function
+    + Make sure to label each bars
+    
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+# Practice Problem 1
+
+## Let’s make Anscombe's quartet {-}
+
+What is Anscombe's Quartet? 
+
+
+
+General Steps for Data Analysis
+
+1. Load data (of course, you need to have your data prior to this...)
+2. Clean data 
+3. Check data distributions
+4. Data frame creation (subsetting the data)
+5. Check data distribution 
+    + Summary statistics 
+    + Exploratory data visualization
+6. Analyze your data 
+7. Create a explanatory data visualization product
+
+
+## Set up an environement and load data
+  * Install R and R studio 
+      + There are a couple options for R's Integrated Development Environment (IDE), but I would recommend R Studio if you do not have your preferred platform yet. 
+  <br />
+  <br />
+  * Create an R peoject file (optional, but recommended)
+      + name your file: myFirstR
+  <br />
+  <br />
+  * Create an R script file
+      + name your file: anscombe
+  <br />
+  <br />
+  * Check and set up your work directory 
+      + work directory: a place/ folder on your computer where your file locates
+```{r, include=TRUE, eval=FALSE, message = FALSE}
+#check your work directory
+getwd()
+
+#set your work directory 
+setwd("/YOUR FILE PATH HERE/")
+
+#mac users (if you made a folder on your desktop)
+setwd("/Users/your-user-name/Desktop/myFirstR")
+
+#PC users (if you made a folder on your desktop)
+setwd("\\")
+```
+
+  * Install and load packages you need for the project
+      + What are packages?
+      + Difference between install and load packages 
+          + Install packages: You only need to do it once when you don't have a package installed in your R
+          + Load packages: You need to load them when you re-open R or want to use a package that is not loaded yet (package is already installed)
+          + Make sure you install and load all the packages you need in the beginning of your code 
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#install packages 
+install.packages("ggplot2")
+install.packages("dyplyr")
+install.packages("tidyverse")
+install.packages("RCurl")
+  
+#load packages
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(RCurl)
+```
+
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#to check installed packages, run the code below or click "packages" on R studio
+ip = as.data.frame(installed.packages()[,c(1,3:4)])
+ip = ip[is.na(ip$Priority),1:2,drop=FALSE]ip 
+```
+        
+* load a dataset (if you are running R on R studio write this code to load data)
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#loading data from a github repository. assign URL variable
+url <- getURL("https://raw.githubusercontent.com/maiuchi/r_test1/master/test.csv")
+
+#name a data frame (df) anscombe and read csv
+anscombe <- read.csv(text = url)
+```
+
+* R already has this data installed... so you can also do... 
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+data("anscombe")
+```
+
+## Check data structure and clean data (done for today)
+
+* Once you load the data up to R, the first thing you'd want to do is: 
+    + Make sure your data is properly loaded 
+        + function to use: View(name-of-dataframe)
+    + Check the structure of the data
+        + function to use: str(name-of-dataframe) or glimpse(name-of-dataframe)
+
+## Check data distributions
+
+# Temporaly R Platform {-}
+
+In case you had issues running code on R studio, you can use type your code below to follow the demo
+
+<iframe width='100%' height='1800' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
