@@ -1,0 +1,159 @@
+# Base R syntax and data type
+
+## Data type
+  + Charactor vector (srting and/ or factor): defined by using " "
+    + (e.g.) "Jack", "Rose"
+    + Cannot perform mathmatical calculations
+    
+  + Numeric vector (double, integer etc...): numbers are written as is
+    + (e.g.) 100, 200 
+    + Can perfom a mathmatical calculations
+  <br />
+  + Logical vecor: TRUE or FALSE
+      
+Let's practice!
+
+  * write a code *100 + 200* as a numerical vector
+  * write a code *100 + 200* as a character vector
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+  
+
+## Create a variable and assign a value 
+* if you want to make a variable x and assign 1 as a value
+    + "<-" is the symbol we use to assign values in R
+    + "#" is to make comments on an R script
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+x #check the variable
+```
+
+Let's practice!
+
+  * Create a variable pineapples and assign 120 as a value
+      + Check the variable
+  
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Create variables and calculate
+* Create variables x and y. 
+* Assign 1 as a value for x, 4 as a value of y
+* Add them up
+* Check if x is bigger than y
+
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+
+#create variables x, y and assign values
+x <- 1
+y <- 4
+
+#add x and y
+x + y
+
+#examine using logical operator 
+x > y
+
+```
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Add them up using variable names
+* Check if pineapples are larger than strawberries using a logical operator
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+
+## Create a new variable with the sum 
+* Create a variable z and assign the sum of x + y
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+y <- 4
+
+#create a new variable z and assign the sum of x and y
+z <- x + y
+
+#check the value of z
+z
+``` 
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Create a new variable pineberries and assign the sum of pineapples and strawberries
+* Check the value of pineberries)
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Use functions
+* Calcurate the sum of x, y and z 
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+x <- 1
+y <- 4
+z <- x + y
+
+#sum up x, y and z using the sum() function
+sum(x, y, z)
+```
+Let's practice!
+
+* Create a variable pineapples and assign 120 as a value. 
+* Create a variable strawberries and assign 70 as a value.
+* Create a new variable pineberries and assign the sum of pineapples and strawberries
+* Sum up pinabbles, strawberries, and pineberries using the sum() function
+
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Make a data frame
+* Make a data frame "df1"
+    + (explanation 1). "variable" is a column name, c("", "",) is to add multiple vairiables. this says assign x to the "variable" column,  row 1. assign y to the "variable" column, row 2. assign z to the "variable" column, row 3. 
+    + (explanation 2). "value" is a column name. this says that assign 1 to the "value" column, row 1. assign 4 to the "value" column, row 2. assign 10 to the "value" column, row 3. 
+* Calcurate the mean of x, y and z 
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+df1 <- data.frame("variable" = c("x", "y", "z"), #(explanation 1). 
+                   "value" = c(1, 4, 10)) #(explanation 2). 
+
+str(df1)
+
+#calcurate mean
+mean(df1$value) #"$" is select "value column" from df1
+```
+
+Let's practice!
+
+* Create a dataframe "fruits," which contains two columns ("fruitType" and "amount")
+    + pineapples, which the value is 120
+    + strawberries, which the value is 70
+    + pineberries, which the value is 190
+* Check the structure of the dataframe 
+* Calculate the mean of "amount"" 
+    
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+
+## Create a simple plot
+
+* Create a data frame "firstHalf"
+* Create a simple barplot using the "barplot()" function
+```{r, eval=FALSE, include=TRUE, message=FALSE}
+firstHalf <- data.frame("month" = c("Jan", "Feb", "Mar", "Apr", "May", "June"), 
+                   "value" = c(150, 200, 15, 70, 300, 60)) 
+
+#create a bar plot. names.arg is to label each bar
+barplot(fristHalf$value, names.arg = c("Jan", "Feb", "Mar", "Apr", "May", "June")) 
+```
+
+Let's practice!
+
+* Create a data frame "secondHalf." Monthly values are as follows: 
+    + July, 250
+    + August, 10
+    + September, 600
+    + October, 120
+    + November, 80
+    + December, 50
+
+* Create a barplot using the "barplot()" function
+    + Make sure to label each bars
+    
+<iframe width='100%' height='400' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
+

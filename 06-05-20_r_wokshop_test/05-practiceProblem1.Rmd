@@ -1,0 +1,101 @@
+# Practice Problem 1
+
+## Let’s make Anscombe's quartet {-}
+
+What is Anscombe's Quartet? 
+
+
+
+General Steps for Data Analysis
+
+1. Load data (of course, you need to have your data prior to this...)
+2. Clean data 
+3. Check data distributions
+4. Data frame creation (subsetting the data)
+5. Check data distribution 
+    + Summary statistics 
+    + Exploratory data visualization
+6. Analyze your data 
+7. Create a explanatory data visualization product
+
+
+## Set up an environement and load data
+  * Install R and R studio 
+      + There are a couple options for R's Integrated Development Environment (IDE), but I would recommend R Studio if you do not have your preferred platform yet. 
+  <br />
+  <br />
+  * Create an R peoject file (optional, but recommended)
+      + name your file: myFirstR
+  <br />
+  <br />
+  * Create an R script file
+      + name your file: anscombe
+  <br />
+  <br />
+  * Check and set up your work directory 
+      + work directory: a place/ folder on your computer where your file locates
+```{r, include=TRUE, eval=FALSE, message = FALSE}
+#check your work directory
+getwd()
+
+#set your work directory 
+setwd("/YOUR FILE PATH HERE/")
+
+#mac users (if you made a folder on your desktop)
+setwd("/Users/your-user-name/Desktop/myFirstR")
+
+#PC users (if you made a folder on your desktop)
+setwd("\\")
+```
+
+  * Install and load packages you need for the project
+      + What are packages?
+      + Difference between install and load packages 
+          + Install packages: You only need to do it once when you don't have a package installed in your R
+          + Load packages: You need to load them when you re-open R or want to use a package that is not loaded yet (package is already installed)
+          + Make sure you install and load all the packages you need in the beginning of your code 
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#install packages 
+install.packages("ggplot2")
+install.packages("dyplyr")
+install.packages("tidyverse")
+install.packages("RCurl")
+  
+#load packages
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(RCurl)
+```
+
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#to check installed packages, run the code below or click "packages" on R studio
+ip = as.data.frame(installed.packages()[,c(1,3:4)])
+ip = ip[is.na(ip$Priority),1:2,drop=FALSE]ip 
+```
+        
+* load a dataset (if you are running R on R studio write this code to load data)
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+#loading data from a github repository. assign URL variable
+url <- getURL("https://raw.githubusercontent.com/maiuchi/r_test1/master/test.csv")
+
+#name a data frame (df) anscombe and read csv
+anscombe <- read.csv(text = url)
+```
+
+* R already has this data installed... so you can also do... 
+```{r, include=TRUE, eval=FALSE, message=FALSE}
+data("anscombe")
+```
+
+## Check data structure and clean data (done for today)
+
+* Once you load the data up to R, the first thing you'd want to do is: 
+    + Make sure your data is properly loaded 
+        + function to use: View(name-of-dataframe)
+    + Check the structure of the data
+        + function to use: str(name-of-dataframe) or glimpse(name-of-dataframe)
+
+## Check data distributions
+
+

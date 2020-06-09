@@ -1,0 +1,34 @@
+# Why learn R?
+
+## Pros and Cons of R {-}
+
+Pros
+
+  * R is a language made by statisticians
+     + Lots of packages that allow you to perform statistical analysis/ modeling  
+     + Large user community  
+     + Free and open source  
+     + Nice visualization package (ggplot) 
+    
+Cons 
+
+  * R has a learning curve  
+  * R is more specific to statistical analysis 
+     + (e.g.) Python can do a lot more and their stats packages are getting better
+     
+## Learning a programing language is an investment, choose wisely {-}
+
+Points of considerations 
+
+  * What’s your industry’s standard?  
+      + If you are going to finance, I’d learn Excel instead
+      + If a job you are applying to uses SAS, I'd learn SAS instead
+  <br />
+  <br />
+  * Do you need a programming language to perform what you need to do? 
+      + If you want to a health insurance company writing policies, maybe learning a programming language will have a small investment of return 
+  <br />
+  <br />
+  * Is the software/ programming language free (open source) or licensed?  
+      + If licensed and your employer/ research team has no funding for it, your programing knowledge won’t be as helpful as it could be  
+      + If open source, you can just download it to your computer (most of the time if no restrictions from the organizations you work for) 

@@ -1,0 +1,5 @@
+# Temporaly R Platform {-}
+
+In case you had issues running code on R studio, you can use type your code below to follow the demo
+
+<iframe width='100%' height='1800' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
